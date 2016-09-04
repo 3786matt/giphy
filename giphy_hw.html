@@ -1,0 +1,99 @@
+<html>
+<head>
+	<title>Metal Madness!</title>
+	<style type="text/css">
+		button, div, form, input {
+			margin: 20px;
+		}
+	</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Metal Madness!</h1>
+
+  <!-- Movies will Get Dumped Here -->
+  <div id="metalCollect"></div>
+
+  <form id="metalForm">
+    <label for="metalInput">Gimme more metal!</label>
+    <input type="text" id="metal-inject"><br>
+    
+    <!-- Button triggers new movie to be added -->
+    <input id="extraMetal" type="submit" value="Add more metalheads to the moshpit!">
+  </form>
+  <div id="jsonStuff"></div>
+
+<script src='http://code.jquery.com/jquery-2.1.3.min.js'></script>
+<script type="text/javascript">
+
+	// Initial array of movies
+	var bands = ['Megadeth', 'Metallica', 'Ozzy Osbourne', 'Black Label Society', 'Slayer'];
+
+  console.log(bands);
+
+
+  function metalOutput() {
+    var metal = $(this).attr('divTitle');
+    var gifyUrl = "http://api.giphy.com/v1/gifs/search?&api_key=dc6zaTOxFJmzC&q="+metal+"&limit=4&fmt&rating=pg";
+
+    // "http://api.giphy.com/v1/gifs/search?q="+metal+"&api_key=dc6zaTOxFJmzC";
+
+    $.ajax({url: gifyUrl, method:'GET'})
+
+    .done(function(response) {
+      console.log(response);
+      $('#jsonStuff').html(JSON.stringify(response));
+
+    });
+  }
+
+
+
+  function divMaker(){
+
+    $('#metalCollect').empty();
+
+    for (var i=0; i <bands.length; i++){
+      
+      var newMetalDiv = $('<div/>').appendTo('#metalCollect');
+
+      newMetalDiv.addClass('band');
+      newMetalDiv.attr('divTitle', bands[i]);
+      newMetalDiv.text(bands[i]);
+      $('#metalCollect').append(newMetalDiv);
+    
+    }
+}
+
+$('#extraMetal').on('click', function(){
+
+var metal = $('#metal-inject').val().trim();
+bands.push(metal);
+divMaker();
+return false;
+
+})
+
+$(document).on('click', '.band', metalOutput);
+
+divMaker();
+
+
+</script>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
