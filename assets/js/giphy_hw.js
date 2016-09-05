@@ -25,7 +25,7 @@ var bands = ['Megadeth', 'Metallica', 'Ozzy Osbourne', 'Black Label Society', 'S
         container.append(newImage);
       });
 
-      // $('#jsonStuff').html(JSON.stringify(response));
+     
 
     });
 
@@ -34,7 +34,7 @@ var bands = ['Megadeth', 'Metallica', 'Ozzy Osbourne', 'Black Label Society', 'S
     .done(function(response) {
       console.log(response);
 
-      var ratings = response.data[1].rating;
+      var ratings = response.data[0].rating;
       console.log("Rating: " + ratings);
       $.each(ratings, function(key, value){
         var container1= $('#rating');
@@ -45,7 +45,7 @@ var bands = ['Megadeth', 'Metallica', 'Ozzy Osbourne', 'Black Label Society', 'S
         container1.append(newRate);
       });
 
-      // $('#jsonStuff').html(JSON.stringify(response));
+   
 
     });
   }
