@@ -3,11 +3,15 @@
 			margin: 20px;
 		}
 
-/*body {
-	background-image: url('http://cdn.playbuzz.com/cdn/763118af-09ea-4199-9f8f-ce5e3d3f79f5/1de19601-c6f5-4ddc-a8b7-310ded57eab0.gif');
+body {
+	background-image: url('http://ottmag.com/wp-content/uploads/2016/05/heavy-metal-wallpaper-04.jpg');
 	background-size: cover;
 }
-*/
+
+
+/*
+'http://cdn.playbuzz.com/cdn/763118af-09ea-4199-9f8f-ce5e3d3f79f5/1de19601-c6f5-4ddc-a8b7-310ded57eab0.gif'*/
+
 .container {
 
 }
@@ -16,3 +20,59 @@
 	width: 100px;
 	height: 100px;
 }
+
+h1 {
+	text-align: center;
+	font-size: 150px;
+	color: red;
+	font-family: NewRocker;
+
+	text-shadow: 0px -1px 4px white, 0px -2px 10px yellow, 0px -10px 20px #ff8000, 0px -18px 40px red;
+	
+}
+
+@font-face{
+	font-family: NewRocker;
+	src: url(pablo-impallari_newrocker/NewRocker-Regular.ttf);
+}
+
+@font-face{
+	font-family: Metal;
+	src: url(lj-design-studios_blade/Blade.ttf);
+}
+
+/*#metalCollect {
+	font-family: Metal;
+	font-size: 32px;
+	color: red;
+	
+}*/
+
+.band {
+	width: 150px;
+	height: inherit;
+	background-color: orange;
+	border-radius: 10px;
+	border-width: 5px;
+	border-style: solid;
+	border-color: red;
+	text-align: center;
+	line-height: 110%;
+	float: right;
+	font-family: Metal;
+	font-size: 32px;
+	color: red;
+	clear: both;
+}
+
+
+#metalCollect {
+	width: 200px;
+}
+
+
+
+
+
+
+
