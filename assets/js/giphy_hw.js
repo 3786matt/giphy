@@ -6,7 +6,7 @@ var bands = ['Megadeth', 'Metallica', 'Ozzy Osbourne', 'Black Label Society', 'S
 
   function metalOutput() {
     var metal = $(this).attr('divTitle');
-    var gifyUrl = "http://api.giphy.com/v1/gifs/search?&api_key=dc6zaTOxFJmzC&q="+metal+"&limit=2&fmt&rating=pg";
+    var gifyUrl = "http://api.giphy.com/v1/gifs/search?&api_key=dc6zaTOxFJmzC&q="+metal+"&limit=10&fmt&rating=pg-13";
 
     // "http://api.giphy.com/v1/gifs/search?q="+metal+"&api_key=dc6zaTOxFJmzC";
 
@@ -17,7 +17,7 @@ var bands = ['Megadeth', 'Metallica', 'Ozzy Osbourne', 'Black Label Society', 'S
 
       var gifs = response.data;
       $.each(gifs, function(key, value){
-        var container= $('#jsonStuff');
+        var container= $('.images');
         gif=value;
         original_url=gif.images.original.url;
         newImage=$('<img>');
@@ -34,7 +34,7 @@ var bands = ['Megadeth', 'Metallica', 'Ozzy Osbourne', 'Black Label Society', 'S
     .done(function(response) {
       console.log(response);
 
-      var ratings = response.data[0].rating;
+      var ratings = response.data[1].rating;
       console.log("Rating: " + ratings);
       $.each(ratings, function(key, value){
         var container1= $('#rating');
