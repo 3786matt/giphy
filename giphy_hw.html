@@ -22,6 +22,7 @@
     <input id="extraMetal" type="submit" value="Add more metalheads to the moshpit!">
   </form>
   <div id="jsonStuff"></div>
+  <div id="rating"></div>
 
 <script src='http://code.jquery.com/jquery-2.1.3.min.js'></script>
 <script type="text/javascript">
@@ -34,7 +35,7 @@
 
   function metalOutput() {
     var metal = $(this).attr('divTitle');
-    var gifyUrl = "http://api.giphy.com/v1/gifs/search?&api_key=dc6zaTOxFJmzC&q="+metal+"&limit=4&fmt&rating=pg";
+    var gifyUrl = "http://api.giphy.com/v1/gifs/search?&api_key=dc6zaTOxFJmzC&q="+metal+"&limit=2&fmt&rating=pg";
 
     // "http://api.giphy.com/v1/gifs/search?q="+metal+"&api_key=dc6zaTOxFJmzC";
 
@@ -42,7 +43,38 @@
 
     .done(function(response) {
       console.log(response);
-      $('#jsonStuff').html(JSON.stringify(response));
+
+      var gifs = response.data;
+      $.each(gifs, function(key, value){
+        var container= $('#jsonStuff');
+        gif=value;
+        original_url=gif.images.original.url;
+        newImage=$('<img>');
+        newImage.attr('src', original_url);
+        container.append(newImage);
+      });
+
+      // $('#jsonStuff').html(JSON.stringify(response));
+
+    });
+
+    $.ajax({url: gifyUrl, method:'GET'})
+
+    .done(function(response) {
+      console.log(response);
+
+      var ratings = response.data[0].rating;
+      console.log("Rating: " + ratings);
+      $.each(ratings, function(key, value){
+        var container1= $('#rating');
+        rate=value;
+        original_url1=rate.images.original.rating;
+        newRate=$('<div>');
+        newRate.attr('src', original_url1);
+        container1.append(newRate);
+      });
+
+      // $('#jsonStuff').html(JSON.stringify(response));
 
     });
   }
@@ -53,7 +85,7 @@
 
     $('#metalCollect').empty();
 
-    for (var i=0; i <bands.length; i++){
+    for (var i=0; i<bands.length; i++){
       
       var newMetalDiv = $('<div/>').appendTo('#metalCollect');
 
@@ -77,6 +109,8 @@ return false;
 $(document).on('click', '.band', metalOutput);
 
 divMaker();
+
+// metalOutput();
 
 
 </script>
