@@ -16,39 +16,40 @@ var bands = ['Megadeth', 'Metallica', 'Ozzy Osbourne', 'Black Label Society', 'S
       console.log(response);
 
       var gifs = response.data;
+     
       $.each(gifs, function(key, value){
         var container= $('.images');
+       
         gif=value;
-        original_url=gif.images.original.url;
+     
+        original_url=gif.images.fixed_height_still.url;
+        original_url1=gif.rating;
+        
         newImage=$('<img>');
+        // newRate=$('<div/>');
+        
         newImage.attr('src', original_url);
-        container.append(newImage);
+        // newRate.attr('txt', original_url1);
+        newImage.attr('rating', original_url1);
+        
+        container.append('Rating: ' + original_url1, newImage);
+        // container.append(newImage);
+
+        
+
+        // container.appendTo()
+        // $('.images').append(newImage.rating);
+        // container.prepend(newRate);
+        // container.append("Rating: " + JSON.stringify(newRate));
       });
+
+      
 
      
 
     });
 
-    $.ajax({url: gifyUrl, method:'GET'})
-
-    .done(function(response) {
-      console.log(response);
-
-      var ratings = response.data[0].rating;
-      console.log("Rating: " + ratings);
-      $.each(ratings, function(key, value){
-        var container1= $('#rating');
-        rate=value;
-        original_url1=rate.images.original.rating;
-        newRate=$('<div>');
-        newRate.attr('src', original_url1);
-        container1.append(newRate);
-      });
-
-   
-
-    });
-  }
+}
 
 
 
