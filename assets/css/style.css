@@ -2,7 +2,7 @@
 
 body {
 	background-image: url('http://ottmag.com/wp-content/uploads/2016/05/heavy-metal-wallpaper-04.jpg');
-	background-size: cover;
+	/*background-size: cover;*/
 }
 
 
@@ -54,7 +54,7 @@ h1 {
 	color: yellow;
 	font-family: NewRocker;
 	font-size: 35px;
-	/*float: top;*/
+	/*margin: auto;*/
 }
 #rating {
 	position: relative;
@@ -121,8 +121,20 @@ h1 {
 
 }
 
+#jsonStuff {
+	margin-top: 80px;
+}
 
+p {
+	text-align: center;
+	margin-bottom: auto;
+	margin-top: 20px;
+	color: orange;
+	/*border-bottom-width: 3px;
+	border-bottom-style: solid;
+	border-bottom-color: red;*/
 
+}
 
 
 
