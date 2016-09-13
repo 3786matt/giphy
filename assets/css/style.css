@@ -1,19 +1,8 @@
 
 
 body {
-	/*background-image: url('http://ottmag.com/wp-content/uploads/2016/05/heavy-metal-wallpaper-04.jpg');*/
-	/*background-size: cover;*/
-
-	background-image: url(heavy-metal-wallpaper-04.jpg);
+		background-image: url(heavy-metal-wallpaper-04.jpg);
 }
-
-
-/*
-'http://cdn.playbuzz.com/cdn/763118af-09ea-4199-9f8f-ce5e3d3f79f5/1de19601-c6f5-4ddc-a8b7-310ded57eab0.gif'*/
-
-/*.container {
-width: 20px;
-}*/
 
 img {
 	padding: 0px;
@@ -26,11 +15,6 @@ img {
 	border-radius: 5px;
 }
 
-/*div {
-	font-size: 30px;
-	color: white;
-}*/
-
 h1 {
 	text-align: center;
 	font-size: 150px;
@@ -38,8 +22,7 @@ h1 {
 	font-family: NewRocker;
 	text-shadow: 0px -1px 4px white, 0px -2px 10px yellow, 0px -10px 20px #ff8000, 0px -18px 40px red;
 	height: 160px;
-	margin-bottom: 50px;
-	
+	margin-bottom: 50px;	
 }
 
 @font-face{
@@ -56,8 +39,8 @@ h1 {
 	color: yellow;
 	font-family: NewRocker;
 	font-size: 35px;
-	/*margin: auto;*/
 }
+
 #rating {
 	position: relative;
 }
@@ -72,22 +55,17 @@ h1 {
 	border-color: red;
 	text-align: center;
 	line-height: 110%;
-	/*float: right;*/
 	font-family: Metal;
 	font-size: 40px;
 	color: red;
-/*	clear: both;*/
-	/*margin: 6 auto;*/
 	margin: 5px;
 	display: inline-block;
 }
-
 
 #metalCollect {
 	width: 1260px;
 	padding: 0px;
 	margin:auto;
-
 }
 
 #extraMetal {
@@ -120,7 +98,6 @@ h1 {
 	text-align: center;
 	margin-left: 80px;
 	margin-right: auto;
-
 }
 
 #jsonStuff {
@@ -132,10 +109,6 @@ p {
 	margin-bottom: auto;
 	margin-top: 20px;
 	color: orange;
-	/*border-bottom-width: 3px;
-	border-bottom-style: solid;
-	border-bottom-color: red;*/
-
 }
 
 

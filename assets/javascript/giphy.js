@@ -8,7 +8,6 @@ var bands = ['Megadeth', 'Metallica', 'Ozzy Osbourne', 'Black Label Society', 'S
     var metal = $(this).attr('divTitle');
     var gifyUrl = "https://api.giphy.com/v1/gifs/search?&api_key=dc6zaTOxFJmzC&q="+metal+"&limit=10&fmt&rating=r";
 
-    // "http://api.giphy.com/v1/gifs/search?q="+metal+"&api_key=dc6zaTOxFJmzC";
 
     $.ajax({url: gifyUrl, method:'GET'})
 
@@ -24,8 +23,6 @@ var bands = ['Megadeth', 'Metallica', 'Ozzy Osbourne', 'Black Label Society', 'S
 
         var newDiv = $('<div>');
 
-
-
         gif=value;
      
         original_url=gif.images.fixed_height_still.url;
@@ -33,41 +30,22 @@ var bands = ['Megadeth', 'Metallica', 'Ozzy Osbourne', 'Black Label Society', 'S
         original_url1=gif.rating;
         
         newImage=$('<img>');
-        // newRate=$('<div/>');
-        
+               
         newImage.attr('src', original_url);
         newImage.attr('data-still', original_url);
         newImage.attr('data-animated', originalAnimated_url1);
         newImage.attr('data-state', 'still');
-        newImage.addClass('gif');
-        // newRate.attr('txt', original_url1);
+        newImage.addClass('gif');        
         newImage.attr('rating', original_url1);
         newRating=$('<p>');
         newRating.text('Rating: ' + original_url1);
-        // container.append($('<br>'),'Rating: ' + original_url1, $('<br>'), newImage);
-        
         newDiv.append(newRating);
         newDiv.append(newImage);
         newDiv.attr('style', 'display:inline-block')
         container.append(newDiv);
-
-//cmd option f;
-
-        // container.appendTo()
-        // $('.images').append(newImage.rating);
-        // container.prepend(newRate);
-        // container.append("Rating: " + JSON.stringify(newRate));
       });
-
-      
-
-     
-
     });
-
 }
-
-
 
   function divMaker(){
 
@@ -87,41 +65,24 @@ var bands = ['Megadeth', 'Metallica', 'Ozzy Osbourne', 'Black Label Society', 'S
 
 $('#extraMetal').on('click', function(event){
 
-  // event.preventDefault();
   var metalInput = $('#metal-inject').val().trim();
-// if('#metal-inject').val().trim().contains('.bands'){
+
   if(($.inArray(metalInput, bands) >= 0) || metalInput === ""){
     console.log('invalid input');
-  // return false;
+  
   }else{
     console.log('new stuff yo')
     bands.push(metalInput);
     divMaker();
     $('#metal-inject').val('');  
   }
-
   return false;
 
-// if('#metalCollect'.contains(val()){
-//   return false;
-// }
-
-
-  // );     
-
 });
-
-// function clear() {
-//   $('#metalCollect').empty();
-// };
-
-// $('.band').on('click', '#metalCollect', empty());
 
 $(document).on('click', '.band', metalOutput);
 
 divMaker();
-
-// $('#jsonStuff').on('click', empty());
 
 $(document).on('click', ".gif", function(){
   if($(this).attr('data-state')==='still') {
@@ -132,13 +93,7 @@ $(document).on('click', ".gif", function(){
     $(this).attr('data-state', 'still');
   }
 
-
-  
-
-
-  
 });
 
 
 
-// metalOutput();
