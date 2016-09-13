@@ -6,7 +6,7 @@ var bands = ['Megadeth', 'Metallica', 'Ozzy Osbourne', 'Black Label Society', 'S
 
   function metalOutput() {
     var metal = $(this).attr('divTitle');
-    var gifyUrl = "http://api.giphy.com/v1/gifs/search?&api_key=dc6zaTOxFJmzC&q="+metal+"&limit=10&fmt&rating=r";
+    var gifyUrl = "https://api.giphy.com/v1/gifs/search?&api_key=dc6zaTOxFJmzC&q="+metal+"&limit=10&fmt&rating=r";
 
     // "http://api.giphy.com/v1/gifs/search?q="+metal+"&api_key=dc6zaTOxFJmzC";
 
