@@ -1,8 +1,10 @@
 
 
 body {
-	background-image: url('http://ottmag.com/wp-content/uploads/2016/05/heavy-metal-wallpaper-04.jpg');
+	/*background-image: url('http://ottmag.com/wp-content/uploads/2016/05/heavy-metal-wallpaper-04.jpg');*/
 	/*background-size: cover;*/
+
+	background-image: url(heavy-metal-wallpaper-04.jpg);
 }
 
 
